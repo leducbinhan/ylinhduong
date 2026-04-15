@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Thêm font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Merriweather&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2 {
+            font-family: 'Merriweather', serif;
+        }
+    </style>
+</head>
+<meta charset="UTF-8">
+<title>Phòng khám Y Linh Đường</title>
+
+<style>
+/* ===== HEADER ===== */
+.header {
+    position: sticky; /* dính khi scroll */
+    top: 0;
+    z-index: 999; /* luôn nằm trên */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #0f5132;
+    color: white;
+}
+
+/* LOGO */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* MENU */
+.menu a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+/* HOVER LINE */
+.menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00ff99;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+/* MENU CON */
+.dropdown-content {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: white;
+    min-width: 160px;
+    border-radius: 5px;
+    overflow: hidden;
+
+    opacity: 0; /* ẩn */
+    visibility: hidden;
+    transform: translateY(10px); /* trượt xuống */
+    transition: 0.3s;
+
+    z-index: 1000;
+}
+
+/* ITEM */
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #333;
+}
+
+/* HOVER ITEM */
+.dropdown-content a:hover {
+    background: #f4f4f4;
+}
+
+/* HIỆN MENU */
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* ===== HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #0f5132; /* xanh lá đậm */
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* MENU */
+.menu {
+    position: relative;
+}
+
+.menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+/* DROPDOWN */
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 150px;
+    top: 30px;
+}
+
+.dropdown-content a {
+    color: #333;
+    display: block;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ===== BANNER ===== */
+.banner {
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    color: white;
+}
+
+.banner-text h1 {
+    font-size: 50px;
+}
+
+/* ===== SECTION ===== */
+.section {
+    padding: 60px;
+    text-align: center;
+}
+
+.section h2 {
+    color: #0f5132;
+}
+
+/* ===== CARD (dịch vụ) ===== */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f4f4f4;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    background: #198754;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* ===== FLOAT ICON ===== */
+.float {
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+}
+
+.float a {
+    display: block;
+    margin: 10px 0;
+    background: #198754;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #0f5132;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+
+    <div class="logo">Y LINH ĐƯỜNG</div> <!-- logo -->
+
+    <div class="menu">
+
+        <a href="#">Trang chủ</a>
+
+        <!-- DROPDOWN 1 -->
+        <div class="dropdown">
+            <a href="#">Giới thiệu ▼</a>
+
+            <div class="dropdown-content">
+                <a href="#">Đội ngũ</a>
+                <a href="#">Giấy phép</a>
+            </div>
+        </div>
+
+        <!-- DROPDOWN 2 -->
+        <div class="dropdown">
+            <a href="#">Sản phẩm ▼</a>
+
+            <div class="dropdown-content">
+                <a href="#">Xương khớp</a>
+                <a href="#">Dạ dày</a>
+            </div>
+        </div>
+
+        <a href="#">Liên hệ</a>
+
+    </div>
+
+
+</div>
+
+
+<!-- ===== BANNER SLIDER ===== -->
+<div class="slider">
+
+    <!-- Ảnh 1 -->
+    <img class="slide active" src="D:\VIDEO\CC\CCDONE\KENH1\thumb\anh1.jpg">
+
+    <!-- Ảnh 2 -->
+    <img class="slide" src="D:\VIDEO\CC\CCDONE\KENH1\thumb\anh2.jpg">
+
+    <!-- Ảnh 3 -->
+    <img class="slide" src="D:\VIDEO\CC\CCDONE\KENH1\thumb\anh3.jpg">
+</div>
+
+<style>
+/* ===== SLIDER ===== */
+.slider {
+    position: relative;
+    height: 500px;
+    overflow: hidden; /* ẩn ảnh dư */
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* ẩn mặc định */
+    transition: opacity 1s;
+}
+
+.slide.active {
+    opacity: 1; /* ảnh đang hiển thị */
+}	
+
+/* TEXT TRÊN ẢNH */
+.banner-text {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    color: white;
+}
+</style>
+
+<script>
+/* ===== JS: TỰ CHUYỂN ẢNH ===== */
+let slides = document.querySelectorAll('.slide');
+let index = 0;
+
+setInterval(() => {
+    slides[index].classList.remove('active'); // ẩn ảnh cũ
+    index = (index + 1) % slides.length; // sang ảnh tiếp theo
+    slides[index].classList.add('active'); // hiện ảnh mới
+}, 3000); // 3 giây đổi ảnh
+</script>
+
+<!-- GIỚI THIỆU -->
+<div class="section">
+    <h2>Giới thiệu</h2>
+    <p>Phòng khám Y Linh Đường chuyên điều trị Đông y an toàn, hiệu quả.</p>
+</div>
+
+<!-- DỊCH VỤ -->
+<div class="section">
+    <h2>Dịch vụ nổi bật</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Xương khớp</h3>
+            <p>Điều trị đau nhức, thoái hóa.</p>
+        </div>
+
+        <div class="card">
+            <h3>Thần kinh tọa</h3>
+            <p>Giảm đau nhanh, hiệu quả cao.</p>
+        </div>
+
+        <div class="card">
+            <h3>Đông y</h3>
+            <p>Bài thuốc gia truyền.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ICON LIÊN HỆ -->
+<div class="float">
+    <a href="#">📞</a>
+    <a href="#">Z</a>
+    <a href="#">💬</a>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Phòng khám Y Linh Đường
+</div>
+
+<!-- ===== SẢN PHẨM NỔI BẬT ===== -->
+<div class="section"> <!-- khung chứa -->
+
+    <h2>Sản phẩm nổi bật</h2> <!-- tiêu đề -->
+
+    <div class="products"> <!-- chứa các sản phẩm -->
+
+        <!-- SẢN PHẨM 1 -->
+        <div class="product">
+            <img src="sp1.jpg"> <!-- ảnh sản phẩm -->
+            <h3>Trà thảo mộc</h3> <!-- tên -->
+            <p>400.000đ</p> <!-- giá -->
+        </div>
+
+        <!-- SẢN PHẨM 2 -->
+        <div class="product">
+            <img src="sp2.jpg">
+            <h3>Thuốc xương khớp</h3>
+            <p>450.000đ</p>
+        </div>
+
+        <!-- SẢN PHẨM 3 -->
+        <div class="product">
+            <img src="sp3.jpg">
+            <h3>Đông trùng hạ thảo</h3>
+            <p>900.000đ</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===== LIÊN HỆ ===== -->
+<div class="footer">
+
+    <h3>Phòng khám Y Linh Đường</h3> <!-- tên -->
+
+    <p>Địa chỉ: Hà Nội</p> <!-- địa chỉ -->
+    <p>Hotline: 0123 456 789</p> <!-- số điện thoại -->
+    <p>Email: ylinhduong@gmail.com</p> <!-- email -->
+
+</div>
+
+
+
+</body>
+</html>
